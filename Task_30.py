@@ -20,6 +20,7 @@
 # (**) Усложнение. Присвоение значений переменным a1,d,n запишите, используя только один input, 
 # в одну строку, вам понадобится распаковка и Comprehension или map
 
+
 def arithmetic_progression(a,d,n):
     result_list= []
     a_1=a
@@ -57,3 +58,13 @@ print(arithmetic_progression_comprehension(a,d,n))
 
 # P.S. Пока искала решение для comprehension получилось написать несколько вариантов для простого решения задачи. Решила оставить все. Извините, если отняла много лишнего времени.
 
+# Усложнение (**)
+list1 = input("Введите данные для арифметической прогрессии через запятую(первое значение, шаг, количесто элементов): ")
+list2= list1.split(",")
+a,d,n=list2
+a=int(a)
+d=int(d)
+n=int(n)
+def arithmetic_progression_comprehension(a,d,n):
+    return [i for i in range(a,(a + (n-1) * d)+1,d)]
+print(arithmetic_progression_comprehension(a,d,n))
